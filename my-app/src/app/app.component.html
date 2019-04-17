@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="assets/nyan_docker_whale_gfycat.gif">
+</div>
+<h2>Generate some Guids: </h2>
+<p>One Guid: <button (click)="getGuid()">Click me!</button></p>
+<p>Many guids: <input type="number" style="width: 50px;" [(ngModel)]="count"> <button (click)="getGuids(count)">Click me!</button></p> {{count}}
+<p *ngFor="let guid of guids"><input style="width: 300px;" [value]="guid" readonly ></p>
+
+
+<router-outlet></router-outlet>
