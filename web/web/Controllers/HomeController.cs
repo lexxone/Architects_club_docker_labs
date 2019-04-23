@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Http;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
-namespace web.Controllers
+namespace Web.Controllers
 {
-	[RoutePrefix("api/guid")]
-	public class GuidController : ApiController
+	public class HomeController : Controller
 	{
-		[HttpGet]
-		public IHttpActionResult GetGuid()
+		public ActionResult Index()
 		{
-			var result = Guid.NewGuid().ToString();
-			return Ok(result);
+			return View();
 		}
 
-		[Route("{input:int}"), HttpGet]
-		public IHttpActionResult GetGuids(int input)
+		public ActionResult About()
 		{
-			var result = new List<string>();
+			ViewBag.Message = "Your application description page.";
 
-			for (var i = 0; i < input; i++)
-				result.Add(Guid.NewGuid().ToString());
+			return View();
+		}
 
-			return Ok(result);
+		public ActionResult Contact()
+		{
+			ViewBag.Message = "Your contact page.";
+
+			return View();
 		}
 	}
 }
