@@ -1,0 +1,27 @@
+docker image build -t my_web_image .
+
+docker image ls
+
+docker container run -d --name my_web_container my_web_image
+
+docker ps
+
+docker inspect my_web_container
+ --> goto browser
+
+docker container stop my_web_container
+
+docker container ls -a
+
+docker container start my_web_container
+
+
+RUN NODES -> 
+
+docker run -d --name my_web_container_node1 my_web_image
+
+docker run -d -p 8080:80 --name my_web_container_node2 my_web_image
+
+docker ps
+
+

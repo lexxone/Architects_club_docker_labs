@@ -1,0 +1,33 @@
+FROM microsoft/aspnet:4.7.2-windowsservercore-1803 Base image, ASP .NET image built on Windows server Core -base layer
+
+LABEL maintainer="mikhail@corepartners.com" version="0.1" Add some metadata about image
+
+COPY ./bin/Release/Publish ./inetpub/wwwroot/app  Copy artifacts from host file system to image folder
+
+EXPOSE 80 Indicates the ports listens for connections.
+
+RUN powershell Import-Module WebAdministration RUN powershell command
+
+RUN powershell ... powershell command
+
+
+
+
+
+
+
+
+Dockerfile - instruction for building images
+
+Each instruction creates one level
+
+CAPITALIZE instructions: <INSTRUCTION> <value>
+
+FROM always first instruction
+FROM - base layer of our image
+
+Some instructions add metadata instead of layers
+
+COPY - copy files into image as new layer
+
+RUN - execute command and create layer
