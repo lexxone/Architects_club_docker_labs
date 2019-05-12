@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+  web:
+    build: ./web
+    image: my_web_image
+    container_name: web
+    ports:
+      - "8080:80"
+  app:
+    build: ./my-app
+    image: my_app_image
+    container_name: app
+    ports:
+      - "8081:80"
+networks:
+ default:
+  external:
+   name: "nat"
