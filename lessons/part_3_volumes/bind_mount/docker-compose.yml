@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    container_name: volume
+    ports:
+      - "8080:80"
+    volumes: #construction <path>:<path> mean 'bind mount' type option
+      - C:\Presentations\docker_temp\mount\Publish:C:\inetpub\wwwroot\app
+    
+networks:
+ default:
+  external:
+   name: "nat"

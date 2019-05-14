@@ -1,0 +1,1 @@
+docker run -d --mount type=bind,src=C:\Presentations\Docker\web\web\bin\Release\Publish,dst=C:\inetpub\wwwroot\app my_web_image_1

@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    container_name: volume
+    ports:
+      - "8080:80"
+    volumes: #construction <volume label>:<path> mean 'volume' type option
+      - web:C:\inetpub\wwwroot\app
+     
+volumes:
+    web:
+          
+networks:
+ default:
+  external:
+   name: "nat"
