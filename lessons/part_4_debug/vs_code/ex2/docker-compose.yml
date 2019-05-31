@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "8081:80"
+      - "4201:4200"
+    volumes:
+      - C:\Presentations\docker_temp\git\Architects_club_docker_labs\lessons\part_4_debug\vs_code\ex2:C:\app
+networks:
+ default:
+  external:
+   name: "nat"

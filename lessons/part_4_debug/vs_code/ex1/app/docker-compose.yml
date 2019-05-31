@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    container_name: debug_app
+    ports:
+      - "8080:80"
+    volumes:
+      - C:\Presentations\docker_temp\debug_app\dist\my-app:C:\inetpub\wwwroot\app
+    
+networks:
+ default:
+  external:
+   name: "nat"

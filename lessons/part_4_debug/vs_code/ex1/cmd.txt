@@ -1,0 +1,2 @@
+//build prod artifacts with source map
+ng build --base-href "/app/" --prod --source-map=true
